@@ -1,0 +1,21 @@
+.imgcarrito{  
+        width: 35px;  
+        margin-left: 550px;    
+  }
+
+  .lblcantidad{
+         background-color: #a2afbc;
+         border-radius: 100%;
+         width: 20px;
+         height: 22px;
+         color: #284460;
+         font-weight: 700;
+         position: relative;
+         top: -10px;   
+         left: -10px;      
+  }
+
+  span{
+        position: relative;
+        top: -2px;
+  }
