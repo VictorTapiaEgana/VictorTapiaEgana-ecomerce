@@ -2,10 +2,15 @@ import Carrito from "../../assets/imagenes/Carrito/shopping_cart.png"
 import "./CartWidget.css"
 
 const CartWidget = () =>{
+    
+    const CartWidget__Cantidad = 10;
+
     return(
         <div className="">
             <img  className="imgcarrito" src={ Carrito } alt="Carrito de Compras" />
-            <label className="lblcantidad"><span>10</span></label>
+            <span className="position-relative translate-middle badge rounded-pill bg-danger">
+                { CartWidget__Cantidad }
+            </span>
         </div>
     )
 }

@@ -1,0 +1,41 @@
+.container{
+    border-radius: 10px;    
+}
+.container  > .container{
+    position: relative;
+    top: -30px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 0px;
+} 
+
+.container > .container > .btn{
+    position: relative;
+    top: -3px;
+    text-decoration: none;
+    font-weight: 700;
+} 
+.container > .container > p{
+    position: relative;
+    top: 5px;
+}
+
+.btn-Add > .btn{
+    width: 100%;
+    margin-bottom: -20px;
+    position: relative;
+    top:-30px
+}
+
+.sinStock{
+    position: relative;
+    top:-30px;
+    text-align: center;
+}
+.desabilitado{
+    pointer-events: none
+}
+.icono{
+    width: 30px;
+}
