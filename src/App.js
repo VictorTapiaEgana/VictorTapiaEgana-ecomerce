@@ -7,11 +7,11 @@ function App() {
     <>
       <div className="container">
         <div className="cabecera">
-          <NavBar />        
+          <NavBar />
         </div>
-    </div>
-    
-    <ItemListContainer greetings={ "Bienvenidos a HABITIK"}/>    
+      </div>
+
+      <ItemListContainer greetings={"Bienvenidos a HABITIK"} />
     </>
   );
 }

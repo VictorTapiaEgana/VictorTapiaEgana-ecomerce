@@ -1,0 +1,13 @@
+.card{
+  margin: 8px;  
+}
+
+.card-text{
+  height: 100px;
+  margin: 0 0 1em 0;
+  overflow: hidden;
+}
+
+.card-price{
+  font-weight: 600;
+}
