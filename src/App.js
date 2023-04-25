@@ -6,13 +6,14 @@ import Footer from "./components/Footer/Footer.jsx";
 function App() {
   return (
     <>
+    
       <div className="container">
         <div className="cabecera">
           <NavBar />
         </div>
       </div>
-
-      <ItemListContainer greetings={"Bienvenidos a HABITIK"} />
+       
+      <ItemListContainer greetings={" "} />
       <Footer />
     </>
   );

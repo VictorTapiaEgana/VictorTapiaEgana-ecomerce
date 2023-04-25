@@ -2,10 +2,12 @@ import Item from "../Item/Item";
 import "./ItemList.css";
 import { v4 as uuidv4 } from 'uuid';
 import { useState,useEffect } from "react";
+import Loading from "../Loading/Loading.jsx"
 
 const ItemList = () => {  
 
   const [NewArray,setNewArray] = useState([]);
+  const[IsLoading,setIsLoading] = useState(false);
 
   //Arreglos   
   const ArrayNotebboks = [
@@ -68,22 +70,9 @@ const ItemList = () => {
     {"Marca": "RIPLEY HOME","Nombre": "SOFA RIPLEY HOME PLOT BEIGE 2C","PrecioNormal": "$529.990","PrecioOferta": "$249.990","PrecioTarjeta": "$219.990","Modelo": "Milán","Tamaño": 3,"Color": "Negro","Material Estructural": "Madera Plywood","Material tapiz": " Tela","Metrial relleno": "Fibras de poliéster","Garantia": "3 Meses"},
     {"Marca": "ALTO HOGAR","Nombre": "SOFA ALTO HOGAR FERNANDA 3C","PrecioNormal": "$429.990","PrecioOferta": "$199.990","PrecioTarjeta": "$179.990","Modelo": "Harry","Tamaño": 2,"Color": "Cafe","Material Estructural": "Madera de pino","Material tapiz": "Cuero sintético","Metrial relleno": "Bloque de espuma","Garantia": "3 Meses"}
   ];
-
-  //Promesa
-//   const Productos = new Promise ((resolve,reject) =>{
-
-//     setTimeout(() => {  
-//         resolve(ArrayNotebboks)        
-//     }, 2000);
-
-//   })
-
-//   Productos.then(result =>{
-//         const NewArray2 = [...result];
-//        setNewArray(NewArray2);
-//   })
-
+ 
 useEffect(() => {
+    setIsLoading(true); //LOADING
     const Productos = new Promise((resolve, reject) => {
       setTimeout(() => {  
 
@@ -95,15 +84,18 @@ useEffect(() => {
     Productos.then(result => {
 
       const NewArray2 = [...result];
+      setIsLoading(false); //LOADING
       setNewArray(NewArray2);
 
     });
 
   }, []);  
 
+  
   return (
     <>
-      
+     { IsLoading &&  <Loading /> }
+
       {NewArray.map((item,index) => {                
          return(  
              
