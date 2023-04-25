@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar/NavBar.jsx";
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </div>
 
       <ItemListContainer greetings={"Bienvenidos a HABITIK"} />
+      <Footer />
     </>
   );
 }

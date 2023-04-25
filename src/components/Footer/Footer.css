@@ -1,0 +1,8 @@
+.footer__iconos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-muted{
+    text-align: center;
+}
