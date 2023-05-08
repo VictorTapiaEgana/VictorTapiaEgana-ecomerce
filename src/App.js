@@ -2,19 +2,26 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-    
-      <div className="container">
-        <div className="cabecera">
-          <NavBar />
-        </div>
-      </div>
-       
-      <ItemListContainer greetings={" "} />
-      <Footer />
+      <BrowserRouter>
+          
+            <NavBar />          
+
+           <Routes>
+              <Route exact path="/" element={ <ItemListContainer /> } />
+              <Route exact path="/categorias/:categoryId" element={ <ItemListContainer/>}/>
+              <Route exact path="/itemdetail/:productId" element={ <ItemDetailContainer />} />
+           </Routes>
+           
+           <Footer />
+
+      </BrowserRouter>
     </>
   );
 }

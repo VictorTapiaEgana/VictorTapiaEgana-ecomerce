@@ -1,9 +1,9 @@
   .content {
-    background: #9C27B0;
+    /* background: #9C27B0; */
     animation: hue 10s linear infinite;
     min-height: 100%;
     width: 500px;
-    margin: 50px 0px
+    margin: 100px 0px;    
   }
   
   .loader {
@@ -14,7 +14,7 @@
     top: 50%;
     margin-top: -1em;
   }
-  
+
   .loader_letter {
     text-transform: uppercase;
     color: #000000;
@@ -66,4 +66,3 @@
       filter: hue-rotate(360deg);
     }
   }
-  

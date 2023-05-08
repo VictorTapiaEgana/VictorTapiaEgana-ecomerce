@@ -3,7 +3,7 @@ import "./CartWidget.css"
 
 const CartWidget = () =>{
     
-    const CartWidget__Cantidad = 10;
+    const CartWidget__Cantidad = 0;
 
     return(
         <div className="">

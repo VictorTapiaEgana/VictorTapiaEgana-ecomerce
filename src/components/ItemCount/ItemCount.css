@@ -1,10 +1,14 @@
 .container{
-    border-radius: 10px;    
+    position: relative;
+    top: -20px;
+    border-radius: 10px;   
+    
 }
 .container  > .container{
-    position: relative;
-    top: -30px;
+    /* position: relative; */
+    /* top: -30px; */
     display: flex;
+    flex-direction: row;
     justify-content:space-around;
     align-items: center;
     padding: 0px;
@@ -20,12 +24,11 @@
     position: relative;
     top: 5px;
 }
-
 .btn-Add > .btn{
     width: 100%;
     margin-bottom: -20px;
     position: relative;
-    top:-30px
+    top:-40px
 }
 
 .sinStock{
@@ -38,4 +41,9 @@
 }
 .icono{
     width: 30px;
+}
+
+.sinStock{
+     position: relative;
+    top: -30px; 
 }

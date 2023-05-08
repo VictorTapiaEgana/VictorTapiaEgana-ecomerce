@@ -6,9 +6,9 @@ import react from "../../assets/logo/react.png"
 
 const Footer = () =>{
     return(
-      <footer class="footer mt-auto py-1 bg-light">
-         <div class="container">
-           <p class="text-muted">Habitik e-commerce para el curso de Reactjs de CODERHOUSE</p>
+      <footer className="footer mt-auto py-1 bg-light">
+      <div className="container">
+           <p className="text-muted">Habitik e-commerce para el curso de Reactjs de CODERHOUSE</p>
            <div className="footer__iconos">
           
             <a href="https://www.coderhouse.com" rel="noreferrer" target="_blank"><img src={ coderhouse } alt="Logo CoderHouse" /></a>
