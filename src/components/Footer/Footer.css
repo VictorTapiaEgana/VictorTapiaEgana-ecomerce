@@ -1,3 +1,7 @@
+.footer{
+    position: relative;
+    top: 160px;
+}
 .footer__iconos{
     display: flex;
     justify-content: center;

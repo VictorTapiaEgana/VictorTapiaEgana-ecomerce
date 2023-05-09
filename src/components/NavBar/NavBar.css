@@ -1,4 +1,9 @@
-.imgnombreEmpresa {
+.navbar{
+  position:fixed;
+  z-index: 2;
+  width: 100vw;
+}
+.imgnombreempresa {
   width: 350px;
 }
 

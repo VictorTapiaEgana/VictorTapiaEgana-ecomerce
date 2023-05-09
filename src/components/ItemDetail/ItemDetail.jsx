@@ -1,9 +1,11 @@
 import ItemCount from "../ItemCount/ItemCount.jsx"
+import "./ItemDetail.css"
 
 const ItemDetail = ({ marca, nombre, PrecioNormal, PrecioOferta, PrecioTarjeta, imagen1,stock }) =>{
     
     return(
-        <>
+      <article className="ItemDetail">
+       <h1> Descripcion</h1>
         <div className="card" style={{"width": "18rem"}}>        
              <img src={require(`${imagen1}`)} className="card-img-top" alt={ nombre } />             
              <div className="card-body">
@@ -24,9 +26,8 @@ const ItemDetail = ({ marca, nombre, PrecioNormal, PrecioOferta, PrecioTarjeta, 
                            initial={1}
                 />
             </div>                    
-        </div>
-        
-        </>
+        </div>       
+      </article>
     )
 }
 

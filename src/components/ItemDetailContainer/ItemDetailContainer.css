@@ -1,7 +1,9 @@
-.container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+  .itemdetailContainer{
+        position: relative;         
+        top: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+  }
+ 

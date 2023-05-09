@@ -26,8 +26,8 @@ const ItemDetailContainer = () => {
     }, [productId]);
 
   return (    
-    <article className="container">
-      <h1> Descripcion</h1>
+    <div className="itemdetailContainer">
+      
          {isLoading && <Loading/>}
       
          {!isLoading && <ItemDetail
@@ -41,7 +41,7 @@ const ItemDetailContainer = () => {
                                   stock = {product.Stock}
                         />
           }  
-    </article>    
+    </div>    
   );
 };
 
