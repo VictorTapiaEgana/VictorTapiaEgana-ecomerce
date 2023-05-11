@@ -1,9 +1,13 @@
-
 # eCommerce CODERHOUSE
 
 Repositorio para ir subiendo las entregas del proyecto del curso de ReactJS de CoderHouse.
 
 
+
+
+## Screenshots
+
+![Funcionamiento Pre-Entrega #2](https://github.com/VictorTapiaEgana/VictorTapiaEgana-ecomercecoderhouse/blob/main/src/assets/ecommerce.gif)
 
 
 ## Pagina Online 
