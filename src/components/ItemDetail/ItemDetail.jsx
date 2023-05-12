@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount.jsx"
 import "./ItemDetail.css"
 
-const ItemDetail = ({ marca, nombre, PrecioNormal, PrecioOferta, PrecioTarjeta, imagen1,stock }) =>{
+const ItemDetail = ({ id,marca, nombre, PrecioNormal, PrecioOferta, PrecioTarjeta, imagen1,stock }) =>{
     
     return(
       <article className="ItemDetail">
@@ -24,6 +24,10 @@ const ItemDetail = ({ marca, nombre, PrecioNormal, PrecioOferta, PrecioTarjeta, 
 
                 <ItemCount stock={stock}
                            initial={1}
+                           nombre={nombre}
+                           id={id}
+                           img1={imagen1}
+                           
                 />
             </div>                    
         </div>       

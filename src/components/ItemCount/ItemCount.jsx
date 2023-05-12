@@ -2,44 +2,63 @@ import { useEffect, useState } from "react";
 import "./ItemCount.css";
 import menos from "../../assets/imagenes/Carrito/menos.png";
 import mas from "../../assets/imagenes/Carrito/mas.png";
-// import { onAdd } from "../../AsyncMock";
 import { CartContext } from "../context/CardContext";
 import { useContext } from "react";
 
-const ItemCount = ({stock, initial }) => {
+const ItemCount = ({ stock, initial,id, nombre,img1}) => {
+  let hayStock = "";
+  let [cantidad, setCantidad] = useState(0);
+  const { onAdd } = useContext(CartContext);
 
-    let hayStock = "";
-    let [cantidad,setCantidad] = useState(0);
-    const {add_Productos} = useContext(CartContext);
+  useEffect(() => setCantidad(initial), [initial]);
 
-    useEffect(()=>(
-        setCantidad(initial)
-    ),[initial])   
+  stock >= 1 ? (hayStock = true) : (hayStock = false);
 
-    stock >= 1 ? hayStock =true : hayStock=false;        
+  return (
+    <div
+      className={`container ${!hayStock ? "desabilitado" : ""}`}
+      style={{ width: "200px" }}
+    >
+      <div className="container " style={{ backgroundColor: "white" }}>
+        <button
+          className="btn btn-link"
+          onClick={() => {
+            cantidad > 1 && setCantidad(cantidad - 1);
+          }}
+        >
+          <img className="icono" src={menos} alt="Restar Item" />
+        </button>
+        <p> {cantidad} </p>
+        <button
+          className="btn btn-link"
+          onClick={() => {
+            cantidad < stock && setCantidad(cantidad + 1);
+          }}
+        >
+          <img className="icono" src={mas} alt="Sumar Item" />{" "}
+        </button>
+      </div>
 
-    return( 
-        <div className={`container ${!hayStock ? "desabilitado" : "" }`} style={{width:"200px"}} >             
-             
-             <div className="container " style={{ backgroundColor:"white" }}> 
-               <button className="btn btn-link" onClick={ ()=>{cantidad > 1 && setCantidad(cantidad - 1)}}><img className="icono" src={ menos } alt="Restar Item" /></button> 
-               <p> { cantidad } </p>
-               <button className="btn btn-link" onClick={ ()=>{cantidad < stock && setCantidad(cantidad + 1)} }><img className="icono" src={ mas } alt="Sumar Item"/> </button> 
-             </div>
+      {!hayStock ? (
+        <p className="sinStock" style={{ color: "red" }}>
+          sin stock disponible
+        </p>
+      ) : (
+        <p className="sinStock" style={{ color: "red" }}>
+          Stock disponible {stock}
+        </p>
+      )}
 
-             {
-                !hayStock 
-                ? <p className="sinStock" style={{ color:"red" }}>sin stock disponible</p>
-                : <p className="sinStock" style={{ color:"red" }}>Stock disponible {stock}</p>
-             }
-
-             <div className="btn-Add">               
-                <button className={`btn btn-secondary ${hayStock ? "" : " disabled" } `} onClick={ ()=> add_Productos(cantidad) }>Agregar</button>
-            </div>
-
-        </div>
-
-    )
-}
+      <div className="btn-Add">
+        <button
+          className={`btn btn-secondary ${hayStock ? "" : " disabled"} `}
+           onClick={() => onAdd({id: id,nombre:nombre,imagen:img1,cant:cantidad})}
+        >
+          Agregar
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default ItemCount;

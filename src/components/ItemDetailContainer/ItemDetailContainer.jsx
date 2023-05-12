@@ -38,7 +38,8 @@ const ItemDetailContainer = () => {
                                   PrecioOferta={product.PrecioOferta}
                                   PrecioTarjeta={product.PrecioTarjeta}
                                   imagen1={`./productos/${product.id}.jpg`} 
-                                  stock = {product.Stock}
+                                  stock = {product.Stock}                                  
+                                  id={product.id}
                         />
           }  
     </div>    
