@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import "./ItemCount.css";
 import menos from "../../assets/imagenes/Carrito/menos.png";
 import mas from "../../assets/imagenes/Carrito/mas.png";
-import { onAdd } from "../../AsyncMock";
+// import { onAdd } from "../../AsyncMock";
+import { CartContext } from "../context/CardContext";
+import { useContext } from "react";
 
 const ItemCount = ({stock, initial }) => {
 
     let hayStock = "";
     let [cantidad,setCantidad] = useState(0);
-    
+    const {add_Productos} = useContext(CartContext);
+
     useEffect(()=>(
         setCantidad(initial)
     ),[initial])   
@@ -31,7 +34,7 @@ const ItemCount = ({stock, initial }) => {
              }
 
              <div className="btn-Add">               
-                <button className={`btn btn-secondary ${hayStock ? "" : " disabled" } `} onClick={ ()=> onAdd(cantidad) }>Agregar</button>
+                <button className={`btn btn-secondary ${hayStock ? "" : " disabled" } `} onClick={ ()=> add_Productos(cantidad) }>Agregar</button>
             </div>
 
         </div>
