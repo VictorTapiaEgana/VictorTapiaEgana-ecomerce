@@ -1,0 +1,25 @@
+.CartitoDeCompras{
+    position: relative;
+    top:165px;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table{
+    width: 90%;    
+}
+
+.centerTable{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.imgMiniatura{
+    width: 60px;
+}
+

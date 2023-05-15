@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
                                   nombre={product.Nombre}
                                   PrecioNormal={product.PrecioNormal}
                                   PrecioOferta={product.PrecioOferta}
-                                  PrecioTarjeta={product.PrecioTarjeta}
+                                  // PrecioTarjeta={product.PrecioTarjeta}
                                   imagen1={`./productos/${product.id}.jpg`} 
                                   stock = {product.Stock}                                  
                                   id={product.id}

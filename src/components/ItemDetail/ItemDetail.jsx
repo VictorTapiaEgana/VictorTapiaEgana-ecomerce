@@ -27,6 +27,7 @@ const ItemDetail = ({ id,marca, nombre, PrecioNormal, PrecioOferta, PrecioTarjet
                            nombre={nombre}
                            id={id}
                            img1={imagen1}
+                           precio={PrecioOferta}
                            
                 />
             </div>                    

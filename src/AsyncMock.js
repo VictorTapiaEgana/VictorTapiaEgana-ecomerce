@@ -422,26 +422,26 @@ export const onAdd = (cantidad) => {
 export const GetProducts = () => {
 
   return new Promise((resolve) => {
-    setTimeout(() => {
+    // setTimeout(() => {
     
         const newArray = [...ArrayProductos]    
         newArray.sort(() => Math.random() - 0.5);
         
         resolve(newArray);
-    }, 2000);
+    // }, 2000);
   });
 };
 
 export const GetProductsById = (productId) => {
   
   return new Promise((resolve) => {
-    setTimeout(() => {
+    // setTimeout(() => {
         const resultado = ArrayProductos.find(
         (product) => product.id === Number(productId)
       );
       
         resolve(resultado);
-    },2000);
+    // },2000);
   });
 
 };

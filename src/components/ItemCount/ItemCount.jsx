@@ -5,7 +5,7 @@ import mas from "../../assets/imagenes/Carrito/mas.png";
 import { CartContext } from "../context/CardContext";
 import { useContext } from "react";
 
-const ItemCount = ({ stock, initial,id, nombre,img1}) => {
+const ItemCount = ({ stock, initial,id, nombre,img1,precio}) => {
   let hayStock = "";
   let [cantidad, setCantidad] = useState(0);
   const { onAdd } = useContext(CartContext);
@@ -41,7 +41,7 @@ const ItemCount = ({ stock, initial,id, nombre,img1}) => {
 
       {!hayStock ? (
         <p className="sinStock" style={{ color: "red" }}>
-          sin stock disponible
+          Sin stock disponible
         </p>
       ) : (
         <p className="sinStock" style={{ color: "red" }}>
@@ -52,9 +52,16 @@ const ItemCount = ({ stock, initial,id, nombre,img1}) => {
       <div className="btn-Add">
         <button
           className={`btn btn-secondary ${hayStock ? "" : " disabled"} `}
-           onClick={() => onAdd({id: id,nombre:nombre,imagen:img1,cant:cantidad})}
+           
+          onClick={() => onAdd({id: id,
+                                 nombre:nombre,
+                                 imagen:img1,
+                                 cant:cantidad,
+                                 precio:precio
+                                })
+                    }
         >
-          Agregar
+          Comprar
         </button>
       </div>
     </div>

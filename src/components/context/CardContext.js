@@ -22,7 +22,7 @@ export const CartContextProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ ArrayProductos, onAdd }}>
+    <CartContext.Provider value={{ ArrayProductos,  onAdd }}>
       {children}
     </CartContext.Provider>
   );
