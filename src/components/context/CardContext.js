@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 export const CartContext = createContext(null);
 
 export const CartContextProvider = ({ children }) => {
+
   const [ArrayProductos, setArrayProductos] = useState([]);
 
   // no aceptar duplicados y mantener su consistencia.
@@ -22,7 +23,7 @@ export const CartContextProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ ArrayProductos,  onAdd }}>
+    <CartContext.Provider value={{ ArrayProductos, setArrayProductos, onAdd }}>
       {children}
     </CartContext.Provider>
   );

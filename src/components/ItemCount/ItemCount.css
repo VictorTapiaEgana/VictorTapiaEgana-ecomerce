@@ -24,7 +24,8 @@
     position: relative;
     top: 5px;
 }
-.btn-Add > .btn{
+/* .btn-Add > .btn{ */
+ .btn.btn-secondary{
     width: 100%;
     margin-bottom: -20px;
     position: relative;

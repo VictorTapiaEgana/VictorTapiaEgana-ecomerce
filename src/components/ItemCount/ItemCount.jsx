@@ -4,6 +4,7 @@ import menos from "../../assets/imagenes/Carrito/menos.png";
 import mas from "../../assets/imagenes/Carrito/mas.png";
 import { CartContext } from "../context/CardContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({ stock, initial,id, nombre,img1,precio}) => {
   let hayStock = "";
@@ -50,19 +51,22 @@ const ItemCount = ({ stock, initial,id, nombre,img1,precio}) => {
       )}
 
       <div className="btn-Add">
-        <button
-          className={`btn btn-secondary ${hayStock ? "" : " disabled"} `}
-           
-          onClick={() => onAdd({id: id,
-                                 nombre:nombre,
-                                 imagen:img1,
-                                 cant:cantidad,
-                                 precio:precio
-                                })
-                    }
-        >
-          Comprar
-        </button>
+        
+        <Link to={'/cart'}>
+          <button
+            className={`btn btn-secondary ${hayStock ? "" : " disabled"} `}
+            
+            onClick={() => onAdd({id: id,
+                                  nombre:nombre,
+                                  imagen:img1,
+                                  cant:cantidad,
+                                  precio:precio
+                                  })
+                      }                      
+          >
+            Comprar
+          </button>
+        </Link>
       </div>
     </div>
   );
