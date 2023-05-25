@@ -1,29 +1,45 @@
 import { createContext, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext = createContext(null);
 
 export const CartContextProvider = ({ children }) => {
 
   const [ArrayProductos, setArrayProductos] = useState([]);
-
-  // no aceptar duplicados y mantener su consistencia.
-  
-  // addItem(item, quantity) // agregar cierta cantidad de un ítem al carrito
-  
-  // removeItem(itemId) // Remover un item del cart por usando su id
-  
-  // clear() // Remover todos los items
-  
+  // const notify = () => toast("Wow so easy!");
+   let ItemExist= false;
+   
+  // no aceptar duplicados y mantener su consistencia.    
   // isInCart: (id) => true|false
 
   
-
+  //agregar items
   const onAdd = (item) => {
-    setArrayProductos(ArrayProductos.concat(item));   
+     
+     const arrayCarrito = ArrayProductos.find(prod => prod.id === item.id)
+     arrayCarrito !== undefined ? ItemExist=true : ItemExist= false;
+    
+    !ItemExist 
+    ?
+     setArrayProductos(ArrayProductos.concat(item))
+    :    
+    
+    // console.log("Artuculo Duplicado")
+    toast.error('Prodcuto ya se encuentra en el Carrito 🛒',{
+      autoClose: 2000,
+      pauseOnHover: false
+    });
+    ;
+
   };
 
+  const limpiarCarrito = () =>{    
+    setArrayProductos([]);
+  }
+
   return (
-    <CartContext.Provider value={{ ArrayProductos, setArrayProductos, onAdd }}>
+    <CartContext.Provider value={{ ArrayProductos, ItemExist, setArrayProductos, onAdd ,limpiarCarrito }}>
       {children}
     </CartContext.Provider>
   );

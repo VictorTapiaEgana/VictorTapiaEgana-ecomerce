@@ -8,6 +8,11 @@ const CartWidget = () =>{
     
    const {ArrayProductos} = useContext(CartContext);    
 
+   var totalUnidades = ArrayProductos.reduce((total, ArrayProductos) => {
+    return total + ArrayProductos.cant;
+   }, 0);
+
+
     return(
         <div className="">
 
@@ -16,7 +21,7 @@ const CartWidget = () =>{
             </Link> 
 
             <span className="position-relative translate-middle badge rounded-pill bg-danger">
-                { ArrayProductos.length} 
+                { totalUnidades } 
             </span>
         </div>
     )

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const ItemCount = ({ stock, initial,id, nombre,img1,precio}) => {
   let hayStock = "";
   let [cantidad, setCantidad] = useState(0);
-  const { onAdd } = useContext(CartContext);
+  const { onAdd, ItemExist } = useContext(CartContext);
 
   useEffect(() => setCantidad(initial), [initial]);
 
@@ -62,10 +62,10 @@ const ItemCount = ({ stock, initial,id, nombre,img1,precio}) => {
                                   cant:cantidad,
                                   precio:precio
                                   })
-                      }                      
+                    }                    
           >
             Comprar
-          </button>
+          </button>         
         </Link>
       </div>
     </div>
@@ -73,3 +73,4 @@ const ItemCount = ({ stock, initial,id, nombre,img1,precio}) => {
 };
 
 export default ItemCount;
+
