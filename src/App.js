@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart.jsx"
 import NoFound from "./components/NoFound/NoFound.jsx"
 import { ToastContainer } from 'react-toastify';
+import { getFirestore, doc, getDoc } from "firebase/firestore"
 
 import "./App.css";
 import "./dark_theme.css"
