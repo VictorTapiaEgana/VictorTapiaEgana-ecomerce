@@ -5,7 +5,15 @@ import Logo from "../../assets/logo/Logo2_nbg.png";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = ( { categoria }) => {
+
+  // console.log("navBar", categoria)
+  
+  categoria != undefined &&
+                    
+      categoria.map((cate) =>{
+  })
+
 
   const { ArrayProductos } = useContext(CartContext); 
 
@@ -21,9 +29,22 @@ const NavBar = () => {
             
             <div className="d-flex">                  
 
-                  <Link className="navbar-brand" to={'/categorias/notebooks'}>Notebooks</Link>
+                  {/* <Link className="navbar-brand" to={'/categorias/notebooks'}>Notebooks</Link>
                   <Link className="navbar-brand" to={'/categorias/sofas'}>Sofas</Link>
-                  <Link className="navbar-brand" to={'/categorias/deportes'}>Deportes</Link>                  
+                  <Link className="navbar-brand" to={'/categorias/deportes'}>Deportes</Link>                   */}
+
+                  {
+                    categoria !== undefined &&
+                    
+                    categoria.map((cate) =>{
+                      return (
+                        <Link key={cate.id } className="navbar-brand" to={ `/categorias/${cate.nombre.toLowerCase()}`}>{cate.nombre}</Link>
+                      )
+                    })
+                  
+                  }  
+
+
 
                  {ArrayProductos.length > 0 && <CartWidget className="flex-grow-1" /> }                  
 
