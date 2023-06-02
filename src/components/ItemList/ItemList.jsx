@@ -13,9 +13,9 @@ const ItemList = ({ categoryId }) => {
     setIsLoading(true);
 
     getCollections("productos")
-      .then((result) => {
+      .then((result) => {     
         const propductosFiltrados = categoryId
-          ? result.filter((product) => product.Categoria === categoryId)
+          ? result.filter((product) => product.Categoria === Number(categoryId))
           : result;
 
         setIsLoading(false);
@@ -25,6 +25,7 @@ const ItemList = ({ categoryId }) => {
         console.error(error);
       });
   }, [categoryId]);
+ 
 
   return (
     <>

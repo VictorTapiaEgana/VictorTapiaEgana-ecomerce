@@ -4,9 +4,7 @@ import "./ItemListContainer.css";
 
 const ItemListContainer = () => {
  
-  const{ categoryId } = useParams(); 
-  
- 
+  const{ categoryId } = useParams();  
 
   return (
     <div className="ItemListContainer">    

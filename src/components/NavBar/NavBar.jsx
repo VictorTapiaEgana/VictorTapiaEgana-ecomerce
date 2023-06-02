@@ -22,7 +22,7 @@ const NavBar = ({ categoria }) => {
           {categoria !== undefined &&
             categoria.map((cate) => {
               return (
-                <Link key={cate.id} className="navbar-brand" to={`/categorias/${cate.nombre.toLowerCase()}`}>
+                <Link key={cate.id} className="navbar-brand" to={`/categorias/${cate.id}`}>
                   {cate.nombre}
                 </Link>
               );
