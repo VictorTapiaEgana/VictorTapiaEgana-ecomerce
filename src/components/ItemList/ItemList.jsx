@@ -10,7 +10,7 @@ const ItemList = ({ categoryId }) => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(true);                                                                               
 
     getCollections("productos")
       .then((result) => {     

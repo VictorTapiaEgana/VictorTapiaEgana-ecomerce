@@ -30,17 +30,19 @@ const ItemDetailContainer = () => {
       
          {isLoading && <Loading/>}
       
-         {!isLoading && product !== undefined && <ItemDetail
-                                                    key={product.id}
-                                                    marca={product.Marca}
-                                                    nombre={product.Nombre}
-                                                    PrecioNormal={product.PrecioNormal}
-                                                    PrecioOferta={product.PrecioOferta}
-                                                    // PrecioTarjeta={product.PrecioTarjeta}
-                                                    imagen1={`./productos/${product.id}.jpg`} 
-                                                    stock = {product.Stock}                                  
-                                                    id={product.id}
-                                                 />
+         {!isLoading 
+         && product !== undefined 
+         && <ItemDetail
+                      key={product.id}
+                      marca={product.Marca}
+                      nombre={product.Nombre}
+                      PrecioNormal={product.PrecioNormal}
+                      PrecioOferta={product.PrecioOferta}
+                      // PrecioTarjeta={product.PrecioTarjeta}
+                      imagen1={`./productos/${product.id}.jpg`} 
+                      stock = {product.Stock}                                  
+                      id={product.id}
+                    />
           }  
     </div>    
   );
