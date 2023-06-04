@@ -12,11 +12,7 @@ const Cart = () => {
   const HandleDeleteFromCarrito = (id) =>{   
     const arrayFiltrado = ArrayProductos.filter(prod => prod.id != id)
     setArrayProductos(arrayFiltrado)
-  }
-
-  const handleUpdteFromCarrito = (id) =>{
-    console.log(id)
-  }
+  }  
 
   //Total Carrito
    var MontoTotal = ArrayProductos.reduce((total, ArrayProductos) => {
@@ -102,12 +98,12 @@ const Cart = () => {
                              alt="eliminar proucto" 
                              style={{width:"40px"}} 
                              onClick={()=>HandleDeleteFromCarrito(prod.id)}/>
-                        <img id={prod.id}
+                        {/* <img id={prod.id}
                              src={update}     
                              alt="Actualizar Producto"
                              style={{width:"30px"}}
                              onClick={() => handleUpdteFromCarrito(prod.id)}
-                        />
+                        /> */}
                       </td>
 
                     </tr>
@@ -145,11 +141,17 @@ const Cart = () => {
             
           </div>
           <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
-              <button className="btn btn-secondary" type="button" style={{marginBottom:"-30px",marginTop:"30px", width:"90vw"}} onClick={()=>limpiarCarrito()} >Limpiar Carrito</button>     
-              <button className="btn btn-primary" type="button" style={{marginBottom:"50px",width:"90vw"}}>Finalizar compra 🛒</button> 
+
+              <button className="btn btn-secondary" type="button" style={{marginBottom:"-30px",marginTop:"30px", width:"90vw"}} onClick={()=>limpiarCarrito()} >Limpiar Carrito</button>  
+              
+              <Link to={'checkout'}>
+                    <button className="btn btn-primary" type="button" style={{marginBottom:"50px",width:"90vw"}}>Finalizar compra 🛒</button> 
+              </Link>   
+
               <Link to={'/'}>
                 <button className="btn btn-secondary" type="button" style={{marginBottom:"15px", width:"90vw"}} >Seguir Comprando ❤</button>     
               </Link>    
+
           </div>
         
         </div>

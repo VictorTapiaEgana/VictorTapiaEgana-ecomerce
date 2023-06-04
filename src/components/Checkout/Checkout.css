@@ -1,0 +1,10 @@
+.inputGroup{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 180px;  
+    margin-bottom: 50px;  
+}
+

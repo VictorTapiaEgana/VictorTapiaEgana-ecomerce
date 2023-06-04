@@ -12,6 +12,8 @@ import { getCollections, getDocument } from "./utils/getfirestore.js";
 
 import "./App.css";
 import "./dark_theme.css";
+import Checkout from "./components/Checkout/Checkout.jsx";
+import CompleteCheckout from "./components/CompleteCheckout/CompleteCheckout.jsx";
 
 function App() {
   const [categoria, setCategoria] = useState();
@@ -21,13 +23,6 @@ function App() {
       getCollections("categorias").then((result) => {
         setCategoria(result)
       });  
-     
-      // getDocument("categorias","bvCYa2KrTFfMvId8wf4N").then((result) =>{
-
-      //   console.log("getdocuments",result); //BORRAR
-
-      // });
-
     
   },[])
 
@@ -42,6 +37,10 @@ function App() {
           <Route exact path="/categorias/:categoryId" element={<ItemListContainer />}/>
           <Route exact path="/itemdetail/:productId" element={<ItemDetailContainer />}/>
           <Route exact path="/cart" element={<Cart />} />
+          
+          <Route exact path="cart/checkout" element={ <Checkout /> }/>
+          <Route exact path="cart/checkout/completecheckout/:orderNumber" element = { <CompleteCheckout/>}/>
+
           <Route path="*" element={<NoFound />} />
 
         </Routes>

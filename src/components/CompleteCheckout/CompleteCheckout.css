@@ -1,0 +1,9 @@
+.pedidoFinalizado{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 160px;
+    margin-bottom: 50px;
+}

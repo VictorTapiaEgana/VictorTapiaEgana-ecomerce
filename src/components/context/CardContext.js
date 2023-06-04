@@ -7,13 +7,9 @@ export const CartContext = createContext(null);
 export const CartContextProvider = ({ children }) => {
 
   const [ArrayProductos, setArrayProductos] = useState([]);
-  // const notify = () => toast("Wow so easy!");
+ 
    let ItemExist= false;
    
-  // no aceptar duplicados y mantener su consistencia.    
-  // isInCart: (id) => true|false
-
-  
   //agregar items
   const onAdd = (item) => {
      
@@ -23,9 +19,7 @@ export const CartContextProvider = ({ children }) => {
     !ItemExist 
     ?
      setArrayProductos(ArrayProductos.concat(item))
-    :    
-    
-    // console.log("Artuculo Duplicado")
+    :     
     toast.error('Prodcuto ya se encuentra en el Carrito 🛒',{
       autoClose: 2000,
       pauseOnHover: false
