@@ -12,7 +12,7 @@ Repositorio para ir subiendo las entregas del proyecto del curso de ReactJS de C
 
 ## Pagina Online 
 
-- [Prueba Online en VERCEL](https://victortapia-ecomercecoderhouse.vercel.app/)
+- [Prueba Online en VERCEL](https://victortapia-ecommerce.vercel.app/)
 
 
 ## 🛠 Skills
